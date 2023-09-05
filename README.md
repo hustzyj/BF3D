@@ -48,7 +48,6 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python train_rcnn.py --cfg_file cfgs/LI_Fusion_with
 ### Testing
 ```shell
 CUDA_VICUDA_VISIBLE_DEVICES=0 python eval_rcnn.py --cfg_file cfgs/LI_Fusion_with_attention_use_ce_loss_car.yaml --eval_mode rcnn_online  --eval_all  --output_dir ./log/Car_temp1/full_epnet_without_iou_branch/eval_results/  --ckpt_dir ./log/Car_temp1/full_epnet_without_iou_branch/ckpt --set  LI_FUSION.ENABLED True LI_FUSION.ADD_Image_Attention True RCNN.POOL_EXTRA_WIDTH 0.2  RPN.SCORE_THRESH 0.2 RCNN.SCORE_THRESH 0.2  USE_IOU_BRANCH False&
-
 ```
 
 
