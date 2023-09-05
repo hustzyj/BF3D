@@ -393,63 +393,6 @@ class Pointnet2MSG(nn.Module):
                 li_features = self.bi_attention_fusion[i](li_features, neibor_features_qurry)
                 l_xy_cor.append(li_xy_cor)
                 img.append(image)
-
-
-############################################作图###################################################################################
-                # li_index_label = li_index.clone().long().unsqueeze(-1)
-                # li_index_temp = li_index.clone()
-                # li_index_temp = li_index_temp.long().unsqueeze(-1).repeat(1,1,3)
-                # li_xyz_cor = torch.gather(l_xyz[i],1,li_index_temp)
-                # image_show = image[0].clone().permute(1, 2, 0)
-                # image_show = image_show.cpu().detach().numpy()
-                # image_show = np.uint8(np.mean(((image_show + 1) * 255) / 2, axis=2, keepdims=True))
-                # image_show = cv2.applyColorMap(image_show, cv2.COLORMAP_BONE )
-                # npoint_temp = li_xy_cor.shape[1]
-                # li_label_cor = torch.gather(rpn_cls_lable_list[i], 1, li_index_label) 
-                # pos = (li_label_cor.view(-1)>0).sum(dim=0).float()
-                # cmap = plt.cm.get_cmap('hsv', 256)
-                # cmap = np.array([cmap(i) for i in range(256)])[:, :3] * 255
-                
-                # for k in range(npoint_temp):
-                #     pointcenter_show=li_xy_cor[0][k]
-                #     label = li_label_cor[0][k]
-                #     if label.item() == 1:
-                #         depth = li_xyz_cor[0][k][2].cpu().detach().numpy()
-                #         color = cmap[np.clip(int(700/depth), 0, 255), :]
-                #         x= ((pointcenter_show[0] + 1) * image_show.shape[1]) / 2#####192x640
-                #         y = ((pointcenter_show[1] + 1) * image_show.shape[0]) / 2
-                #         x = np.int32(x.cpu().numpy())
-                #         y = np.int32(y.cpu().numpy())
-                #         cv2.circle(
-                #                 image_show,
-                #                 center=(x,
-                #                         y),
-                #                 radius=1,
-                #                 color=[0,0,255],
-                #                 thickness=-1,
-                #                 )
-                #         # for n in range(len(li_xy_neiborhood_cor)):   ######1x4096x2x2
-                #         #     xy_temp = li_xy_neiborhood_cor[n][0][k]
-                #         #     npoint_temp = xy_temp.shape[0]
-                #         #     for m in range (npoint_temp):
-                #         #         xy_temp_1 = xy_temp[m]
-                #         #         x_temp= ((xy_temp_1[0] + 1) * image_show.shape[1]) / 2#####192x640
-                #         #         y_temp  = ((xy_temp_1[1] + 1) * image_show.shape[0]) / 2
-                #         #         x_temp = np.int32(x_temp.cpu().numpy())
-                #         #         y_temp = np.int32(y_temp.cpu().numpy())
-                #         #         color_temp = [255,0,255] if m==1 else [255,255,255]
-                #         #         cv2.circle(
-                #         #             image_show,
-                #         #             center=(x_temp,
-                #         #                     y_temp),
-                #         #             radius=1,
-                #         #             color = color_temp,
-                #         #             thickness=-1,
-                #         #             )
-
-                #         cv2.imwrite('/home/hust/PIS3D/tools/forgroundpoint/FPS-CTR-CTR-CTR/feature_map_save' + str(i+1) +"/" +str(k)+ ".png",image_show.astype(np.uint8)) 
-                # rpn_cls_lable_list.append(li_label_cor)
-#################################################################################################################################################################
             l_xyz.append(li_xyz)
             l_features.append(li_features)
             
