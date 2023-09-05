@@ -31,7 +31,7 @@ BF3D
 ├── tools
 ```
 ## Trained model
-The pretrained model can be obtained from [Baidu](https://pan.baidu.com/s/1RQznrCOimCpPUjPGOwgC9Q)(i8cr)
+The pre-trained model can be obtained from [Baidu](https://pan.baidu.com/s/1RQznrCOimCpPUjPGOwgC9Q)(i8cr)
 
 ## Implementation
 ### Training
