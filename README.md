@@ -17,7 +17,7 @@ sh build_and_install.sh
 ## Dataset preparation
 Please download the official [KITTI 3D object detection](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) dataset and organize the downloaded files as follows: 
 ```
-EPNet
+BF3D
 ├── data
 │   ├── KITTI
 │   │   ├── ImageSets
